@@ -3,13 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogo - Calzado Martin</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    header {
+        background-color: #39A900;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .btn-cerrar {
+        background-color: #00324d;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .btn-cerrar:hover {
+        background-color: #001f33;
+    }
+    main {
+        padding: 30px;
+        max-width: 1100px;
+        margin-bottom: 30px;
+    }
+    .subtitulo {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #00324D;
+    }
+    .contenedor-catalogo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+    .tarjeta-zapato {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 15px;
+        text-align: center;
+        border-top: 5px solid #39A900;
+        width: 280px;
+        transition: transform 0.2s;
+    }
+    .tarjeta-zapato:hover {
+        transform: translateY(-5px);
+    }
+    .tarjeta-zapato img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .tarjeta-zapato h3 {
+        margin: 15px 0 8px 0;
+        color: #00324D;
+    }
+    .precio {
+        font-size: 18px;
+        color: #39A900;
+        font-weight: bold;
+        margin: 8px 0;
+    }
+    .btn-comprar {
+        background-color: #39A900;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 4px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .btn-comprar:hover {
+        background-color: #2e8800;
+    }
+</style>
+</head>
+<body>
 
-<title>Catalogo</title>
+    <header>
+        <h1>Calzado Martin</h1>
+        <a href="Login.html" class="btn-cerrar">Cerrar Sesión</a>
+    </header>
 
-<h1>Bienvenido al catalogo de Calzado Martin.
-    <div class="zapato"></div>
-    <img src="Imagenes/calzado 1.jfif" alt="Calzado Martin" width="300">
-    <img src="Imagenes/calzado 2.jfif" alt="Calzado Martin" width="300">
-    <h2>Zapato Deportivo</h2>
-</h1>
-<a href="Login.html"><button>Cerrar Sesión</button></a>
+    <main>
+        <h2 class="subtitulo">Bienvenido A Nuestro Catálogo De Productos</h2>
+
+        <div class="contenedor-catalogo">
+
+            <div class="tarjeta-zapato">
+                <img src="Imagenes/calzado 1.jfif" alt="Zapato Deportivo 1">
+                <h3>Zapato Deportivo 1</h3>
+                <p>Estilo cómodo y resistente para tu día a día.</p>
+                <p class="precio">$49.900 COP</p>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-zapato">
+                <img src="Imagenes/calzado 2.jfif" alt="Zapato Deportivo 2">
+                <h3>Zapato Deportivo 2</h3>
+                <p>Diseño moderno y ligero para tus actividades deportivas.</p>
+                <p class="precio">$120.000 COP</p>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-zapato">
+                <img src="Imagenes/ZAPATO CASUAL HOMBRE.jfif" alt="Zapato Casual Hombre">
+                <h3>Zapato Casual Hombre</h3>
+                <p>Estilo y comodidad en cada paso que das.</p>
+                <p class="precio">$89.900 COP</p>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-zapato">
+                <img src="Imagenes/ZAPATOS CASUAL DAMA.jfif" alt="Zapato Casual Dama">
+                <h3>Zapato Casual Dama</h3>
+                <p>Elegancia y confort para cualquier ocasión.</p>
+                <p class="precio">$95.000 COP</p>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
+            <!-- Puedes agregar más tarjetas de zapatos aquí -->
+        
