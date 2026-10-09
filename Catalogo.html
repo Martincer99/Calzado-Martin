@@ -98,14 +98,266 @@
     .btn-comprar:hover {
         background-color: #2e8800;
     }
+    .btn-header {
+       background-color: #00324d;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        line-height: 1;
+        height: 42px;
+    }
+    .btn-header:hover {
+        background-color: #03243a;
+    }
+    .btn-Vaciar {
+        background-color: #a10404;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+    .btn-Vaciar:hover {
+        background-color: #640404;
+    }
+    /* --- ESTILOS NUEVOS PARA EL HEADER Y MENÚ LATERAL --- */
+    
+    /* Mantiene el header en una sola línea */
+    header {
+      background-color: #39A900; /* Verde SENA */
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+//REGISTRO RESPONSIVO PARA CELULARES
+    @media (max-width: 600px) {
+      header {
+        padding: 8px 10px !important;
+      }
+      header h1 {
+        font-size: 16px !important;
+        white-space: nowrap !important;
+        margin: 0;
+        overflow: hiddeen;
+
+      }
+      .btn-hamburguesa{
+        font-size: 22px !important;
+        padding: 0 !important;
+      }
+      .contenedor-botones-header {
+        gap: 5px !important;
+      }
+      .btn header {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+        height: 32px !important;
+        gap: 3px !important;
+      }
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .contenedor-botones-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-header {
+      background-color: #00324d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 11px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 38px;
+      gap: 0px !important;
+      white-space: nowrap !important;
+    }
+
+    .btn-header:hover {
+      background-color: #001f33;
+    }
+
+    .btn-vaciar {
+      background-color: #a80000 !important;
+    }
+
+    .btn-vaciar:hover {
+      background-color: #7a0000 !important ;
+    }
+
+    .btn-hamburguesa {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* Oculta el menú a la izquierda fuera de pantalla */
+    .menu-lateral {
+      position: fixed !important;
+      top: 0;
+      left: -280px !important; /* Al estar en negativo no ocupa espacio en la pantalla */
+      width: 240px;
+      height: 100vh;
+      background-color: #00324D;
+      color: white;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    /* Clase que lo despliega al darle clic a ☰ */
+    .menu-lateral.activo {
+      left: 0 !important;
+    }
+
+    .menu-lateral h3 {
+      margin-top: 15px;
+      font-size: 18px;
+      border-bottom: 2px solid #39A900;
+      padding-bottom: 8px;
+    }
+
+    .menu-lateral a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+
+    .btn-cerrar-menu {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      float: right;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .overlay.activo {
+      display: block !important;
+    }
+    /* Estilo para los ítems normales del menú (Perfil, Nosotros, Contacto, Empresa) */
+    .menu-lateral .item-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Espacio uniforme entre el ícono y el texto */
+      color: white;
+      text-decoration: none;
+      padding: 10px 8px;
+      font-size: 14px; /* Tamaño unificado */
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .menu-lateral .item-menu:hover {
+      background-color: #001f33;
+      color: #39A900; /* Resalta en verde SENA al pasar el cursor */
+    }
+
+    /* LÍNEA DIVISORIA EN CSS (Aquí cambias el color) */
+    .menu-lateral .linea-divisoria {
+      border: none;
+      height: 2px;
+      background-color: #39A900;
+      margin: 15px 0;
+    }
+
+    /* Estilo especial para Cerrar Sesión */
+    .menu-lateral .btn-cerrar-sesion {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ff6b6b !important;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 10px 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .menu-lateral .btn-cerrar-sesion:hover {
+      background-color: #490404;
+      color: white !important;
+    }
 </style>
 </head>
 <body>
 
-    <header>
-        <h1>Calzado Martin</h1>
-        <a href="Login.html" class="btn-cerrar">Cerrar Sesión</a>
-    </header>
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <!-- Botón de tres líneas -->
+      <button class="btn-hamburguesa" onclick ="toggleMenu()">☰</button>
+      <h1 style="font-size: 15px; white-space: nowrap; margin: 0;"> Calzado Martin </h1>
+    </div>
+
+    <div class="contenedor-botones-header">
+      <button id="btn-carrito" class="btn-header" onclick="verCarrito()">
+        &#128722; Carrito (<span id="contador-carrito">0</span>)
+      </button>
+      <button class="btn-header btn-vaciar" onclick="vaciarCarrito()">
+        &#128465;&#65039; Vaciar
+      </button>
+    </div>
+  </header>
+
+  <!-- Panel Lateral (Completamente oculto por defecto fuera de la pantalla) -->
+  <div id="menu-lateral" class="menu-lateral">
+    <button class="btn-cerrar-menu" onclick="toggleMenu()">✕</button>
+    <h3> Menú Principal</h3>
+    <a href="#" class="item-menu" onclick="verPerfil()">&#128100;  Mi Perfil</a>
+    <a href="#" class="item-menu" onclick="verSobreNosotros()">&#8505;&#65039; Sobre Nosotros</a>
+    <a href="tel:+573113454565" class="item-menu">&#128222; Contacto</a>
+    <a href="#" class="item-menu" onclick="verAcercadelaEmpresa()">&#127970; Acerca de la Empresa</a>
+
+    <hr class= "linea-divisoria">
+    <a href = "login.html" class = "btn-cerrar-sesion">&#128682; Cerrar Sesión</a>
+  </div>
+
+  <!-- Capa transparente para cerrar el menú -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
     <main>
         <h2 class="subtitulo">Bienvenido A Nuestro Catálogo De Productos</h2>
@@ -117,7 +369,7 @@
                 <h3>Zapato Deportivo 1</h3>
                 <p>Estilo cómodo y resistente para tu día a día.</p>
                 <p class="precio">$49.900 COP</p>
-                <button class="btn-comprar">Agregar al Carrito</button>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Zapato Deportivo 1',49900)">Agregar al Carrito</button>
             </div>
 
             <div class="tarjeta-zapato">
@@ -125,7 +377,7 @@
                 <h3>Zapato Deportivo 2</h3>
                 <p>Diseño moderno y ligero para tus actividades deportivas.</p>
                 <p class="precio">$120.000 COP</p>
-                <button class="btn-comprar">Agregar al Carrito</button>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Zapato Deportivo 2',120000)">Agregar al Carrito</button>
             </div>
 
             <div class="tarjeta-zapato">
@@ -133,7 +385,7 @@
                 <h3>Zapato Casual Hombre</h3>
                 <p>Estilo y comodidad en cada paso que das.</p>
                 <p class="precio">$89.900 COP</p>
-                <button class="btn-comprar">Agregar al Carrito</button>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Zapato Casual Hombre',89900)">Agregar al Carrito</button>
             </div>
 
             <div class="tarjeta-zapato">
@@ -141,12 +393,110 @@
                 <h3>Zapato Casual Dama</h3>
                 <p>Elegancia y confort para cualquier ocasión.</p>
                 <p class="precio">$95.000 COP</p>
-                <button class="btn-comprar">Agregar al Carrito</button>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Zapato Casual Dama',95000)">Agregar al Carrito</button>
             </div>
 
         </div>
     </main>
+<script>
+    // 1. Cargar el carrito guardado o iniciar uno vacío
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+    // 2. Actualizar la cantidad total de pares en el botón del encabezado
+    function actualizarContador() {
+      const contador = document.getElementById('contador-carrito');
+      if (contador) {
+        // Sumamos las cantidades de todos los productos
+        const totalPares = carrito.reduce((total, prod) => total + prod.cantidad, 0);
+        contador.textContent = totalPares;
+      }
+    }
+
+    // 3. Función para agregar productos (Maneja Cantidades)
+    function agregarAlCarrito(nombre, precio) {
+      // Buscamos si el zapato ya está en el carrito
+      const productoExistente = carrito.find(prod => prod.nombre === nombre);
+
+      if (productoExistente) {
+        // Si ya existe, le aumentamos la cantidad
+        productoExistente.cantidad += 1;
+        alert(`¡Agregaste otro par de "${nombre}"! Tienes ${productoExistente.cantidad} unidades en total.`);
+      } else {
+        // Si es nuevo, lo agregamos con cantidad = 1
+        carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+        alert(`¡Listo! Se agregó "${nombre}" al carrito.`);
+      }
+
+      // Guardamos en el navegador y actualizamos el botón
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarContador();
+    }
+
+    // 4. Ver los detalles acumulados del carrito
+    function verCarrito() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      let resumen = "TU CARRITO EN CALZADO MARTIN:\n\n";
+      let totalPagar = 0;
+
+      carrito.forEach((prod, index) => {
+        const subtotal = prod.precio * prod.cantidad;
+        totalPagar += subtotal;
+        resumen += `${index + 1}. ${prod.nombre} (x${prod.cantidad}) = $${subtotal.toLocaleString()} COP\n`;
+      });
+
+      resumen += `\n-----------------------------------`;
+      resumen += `\nTOTAL A PAGAR: $${totalPagar.toLocaleString()} COP`;
+
+      alert(resumen);
+    }
+
+    // 5. Función para vaciar completamente el carrito
+    function vaciarCarrito() {
+      if (carrito.length === 0) {
+        alert("El carrito ya está vacío.");
+        return;
+      }
+
+      const confirmar = confirm("¿Estás seguro de que deseas vaciar todo el carrito?");
+      if (confirmar) {
+        carrito = [];
+        localStorage.removeItem('carrito');
+        actualizarContador();
+        alert("El carrito se ha limpiado correctamente.");
+      }
+    }
+
+    // Cargar el contador en cuanto abre la página
+    actualizarContador();
+
+// Función para abrir y cerrar el menú lateral al hacer clic en ☰ o en ✕
+    function toggleMenu() {
+      const menu = document.getElementById('menu-lateral');
+      const overlay = document.getElementById('overlay');
+      if (menu && overlay) {
+        menu.classList.toggle('activo');
+        overlay.classList.toggle('activo');
+      }
+    }   
+    function verPerfil() {
+      toggleMenu(); // Cierra el menú al hacer clic
+      alert("PERFIL DE USUARIO\n\nNombre: Cliente Registrado\nRol: Comprador\nEstado: Activo");
+    }
+
+    function verSobreNosotros() {
+      toggleMenu();
+      alert("SOBRE NOSOTROS\n\nEn Calzado Martín nos especializamos en ofrecer el mejor calzado Deportivo y Casual con excelente calidad y confort.");
+    }
+
+    function verAcercadelaEmpresa() {
+      toggleMenu();
+      alert("CALZADO MARTÍN S.A.S.\n\nEmpresa colombiana dedicada a la comercialización de calzado de alta resistencia.\nBogotá, Colombia.");
+    }
+    </script>
 </body>
 </html>
             <!-- Puedes agregar más tarjetas de zapatos aquí -->

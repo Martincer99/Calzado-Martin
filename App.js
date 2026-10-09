@@ -15,5 +15,5 @@ app.get('/', (req, res) => {
 
 //Iniciar el servidor
 app.listen(PORT, () => {
-    console.log(`Servidor de Calzado Martin en http://localhost:${PORT}`);
+    console.log(`Servidor de Calzado Martin listo en http://localhost:${PORT}`);
 });
