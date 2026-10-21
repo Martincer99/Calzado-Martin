@@ -72,16 +72,22 @@ button:hover{
     <h2>Registro para Calzado Martin</h2>
 </div>
 
-<input type="text" placeholder="Nombres">
+    <input type="text" id="nombre" placeholder="Nombres" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras">
 
-<input type="text" placeholder="Apellidos">
+    <input type="text" id="apellido" placeholder="Apellidos" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras">
 
-<input type="text" placeholder="Cédula">
+    <input type="text" id="cedula" placeholder="Cédula" required inputmode="numeric" maxlength="10" minlength="7" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
-<input type="date">
+    <input type="email" id="usuario" placeholder="Correo electrónico" required>
 
-<button type="submit" onclick="alert('Registro Exitoso'); window.location.href = 'Login.html';">Guardar</button>
-<p class="copyright">
+    <input type="password" id="password" placeholder="Contraseña" minlength="6" required>
+
+    <input type="password" id="confirm_password" placeholder="Confirmar Contraseña" minlength="6" required>
+
+    <input type="date" id="fecha_nacimiento" required>
+
+    <button type="button" onclick="validarYGuardar()">Guardar</button>
+    <p class="copyright">
 © 2026 Calzado Martin <br>
 Desarrollado por Martin Cervantes<br>
 Aprendiz ADSO - SENA
@@ -89,6 +95,60 @@ Ficha: 3336167
 </p>
 
 </div>
+<script>
+  function validarYGuardar() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const cedula = document.getElementById('cedula').value.trim();
+    const usuario = document.getElementById('usuario').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    const fecha = document.getElementById('fecha_nacimiento').value;
 
+    // Verificar campos vacíos
+    if (!nombre || !apellido || !cedula || !usuario || !password || !confirmPassword || !fecha) {
+      alert("Por favor completa todos los campos.");
+      return;
+    }
+
+    //validar que el nombre y apellido solo contengan letras//
+    const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    
+    if (!regexSoloLetras.test(nombre)) {
+      alert("El nombre solo debe contener letras.");
+      return;
+    }
+
+    if (!regexSoloLetras.test(apellido)) {
+      alert("El apellido solo debe contener letras.");
+      return;
+    }
+    // Validar cédula
+    if (cedula.length < 7 || cedula.length > 10) {
+      alert("La cédula debe tener entre 7 y 10 dígitos.");
+      return;
+    }
+
+//validar correo electrónico77
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexCorreo.test(usuario)) {
+      alert("Ingresa un correo electrónico válido.");
+      return;
+    }
+
+    // Validar contraseñas
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden. Verifícalas.");
+      return;
+    }
+
+    localStorage.setItem("usuarioRegistrado", usuario);
+    localStorage.setItem("passwordRegistrada", password);
+    localStorage.setItem("nombreRegistrado", nombre);
+
+    alert(`¡Registro Exitoso!\nBienvenido(a): ${nombre}. Ya puedes iniciar sesión.`);
+    window.location.href = 'Login.html';
+  }
+</script>
 </body>
 </html>

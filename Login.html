@@ -74,11 +74,11 @@ button:hover{
 </div>
 
 
-<input type="text" placeholder="Usuario">
+<input type="email" id="usuario-login" placeholder="Correo electrónico" required>
 
-<input type="password" placeholder="Contraseña">
+<input type="password" id="password-login" placeholder="Contraseña" required>
 
-<a href="Catalogo.html"><button>Ingresar</button></a>
+<button type="button" onclick="validarInicioSesion()">Iniciar Sesión</button>
 
 <p class="copyright">
 © 2026 Calzado Martin <br>
@@ -89,5 +89,32 @@ Ficha: 3336167
 
 </div>
 
+<script>
+function validarInicioSesion() {
+    const usuarioIngresado = document.getElementById("usuario-login").value.trim();
+    const passwordIngresada = document.getElementById("password-login").value;
+
+//Recupera los datos que se guaradron en el Registro
+    const usuarioGuardado = localStorage.getItem("usuarioRegistrado");
+    const passwordGuardada = localStorage.getItem("passwordRegistrada");
+
+    //Verificar si no hay ningun usuario registrado
+    if ( !usuarioGuardado || !passwordGuardada) {
+        alert(`No hay ningun usuario registardo. Por favor registrese primero.`);
+        window.location.href = 'Registro.html'; // Redirige a la página de registro
+        return;
+    }
+        //validar si el usuario y la contraseña coinciden con los datos guardados
+        if (usuarioIngresado === usuarioGuardado && passwordIngresada === passwordGuardada) {
+            const nombreGuardado = localStorage.getItem("nombreRegistrado");
+            alert(`¡Inicio de sesión exitoso!\nBienvenido(a): ${nombreGuardado}.`);
+            window.location.href = 'Catalogo.html'; // Redirige a la página de catálogo
+        } else {
+            //Si los datos no coinciden, muestra un mensaje de error y redirige a la página de error
+            window.location.href = 'Error.html';
+        }
+    
+}
+</script>
 </body>
 </html>

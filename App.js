@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Ruta para mostrar los archivos HTML
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Login.html'));
+    res.sendFile(path.join(__dirname, 'Registro.html'));
 });
 
 //Iniciar el servidor
